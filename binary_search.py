@@ -6,11 +6,11 @@ def binary_search(array, n):
         
         # moyenne de la list
         mid_index = len(array) // 2
-        mid_point = array[mid_index]
+        if len(array) != 0:
+            mid_point = array[mid_index]
 
-        if len(array) == 2 and mid_point != n:
-            print(f"{n} not in array")
-            find = True
+        else:
+            return find
 
         if mid_point == n:
             find = True
@@ -23,5 +23,8 @@ def binary_search(array, n):
             # cad on va vers la gauche 
             array = array[:(mid_index)]
         
+    return find
 
-binary_search([1, 2, 7, 12, 43, 44, 54, 100, 124, 147], 42)
+
+if __name__ == '__main__':
+    print(binary_search([1, 2, 7, 12, 43, 44, 54, 100, 124, 147], 54))
